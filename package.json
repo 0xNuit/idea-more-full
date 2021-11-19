@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "devDependencies": {
     "@types/express": "^4.17.6",
