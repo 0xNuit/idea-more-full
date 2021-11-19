@@ -6,8 +6,6 @@ const cors = require('cors');
 const request = require('request');
 const buildAdminRouter = require('./admin.router');
 const options = require('./admin.options');
-const fallback = require("express-history-api-fallback");
-
 
 const app = express();
 
@@ -25,28 +23,23 @@ app.use('/api/enposts', enposts);
 const admin = new AdminBro(options);
   const router = buildAdminRouter(admin);
 
-
+  app.use(admin.options.rootPath, router);
 
 // Handle production
 if (process.env.NODE_ENV === 'production') {
  // Static folder
- // https://github.comapp.use(express.static(__dirname + '/public/'));
+ app.use(express.static(__dirname + '/public/'));
  // Handle SPA
- const root = `${__dirname}/public`;
-app.use(express.static(root));
-
-// history fallback
-app.use(fallback('index.html', { root }));
- //app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+ app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
  const run = async () => {
   await mongoose.connect('mongodb+srv://A1:passon@passon.m1dnd.mongodb.net/passes?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  PORT = process.env.PORT
+
   app.listen(process.env.PORT, () => console.log(
-    `Example app listening at http://UrWebsite:${PORT}`,
+    `Example app listening at http://UrWebsite:${process.env.PORT}`,
   ));
 };
 
