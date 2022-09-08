@@ -11,8 +11,8 @@ const enCompanyPosts = require('./Posts/enPosts.admin');
 const options = {
   resources: [CompanyPosts,enCompanyPosts],
   branding: {
-   logo: '/uploads/Logo1.PNG',
-   companyName: 'Pass On',
+   logo: '/uploads/favicon.PNG',
+   companyName: 'IDEA',
   },
 };
 

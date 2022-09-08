@@ -1,20 +1,16 @@
 # adminpanel credentials
-  email:'admin@example.com',
-  password:'passon',
+  email:'admin@idea.com',
+  password:'idea',
 
-# deployment
-/* 1- cd vuetify-passon */
-/* 2- npm run build */
-cd ..
+# run
 1- cd NodeServer 
-2-   git init
-3- git add . && git commit -m 'first'
+2- npm install nodemon
+3- nodemon 
 
-
-
-5- heroku login
-6- heroku create 
-7- heroku open 
-8- heroku git:remote -a exampla-exampla-09967 heroku || git:remote -a murmuring-anchorage-31093 
-9- git push heroku master
-10- heroku open 
+# deploying on heroku 
+1- heroku login
+2- heroku create 
+3- heroku open 
+4- heroku git:remote -a exampla-exampla-09967 heroku || git:remote -a murmuring-anchorage-31093 
+5- git push heroku master
+6- heroku open 
