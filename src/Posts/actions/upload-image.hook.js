@@ -9,9 +9,10 @@ const after = async (response, request, context) => {
 
   if (record.isValid() && uploadImage) {
     const filePath = path.join('./uploads', uploadImage.name); 
-    await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
+    // await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
 
-    await fs.promises.rename(uploadImage.path, filePath);
+    // uploads the image locally
+    // await fs.promises.rename(uploadImage.path, filePath);
  
 
     await record.update({ profilePhotoLocation: `/${filePath}` });
