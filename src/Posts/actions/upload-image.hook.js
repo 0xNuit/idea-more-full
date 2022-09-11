@@ -8,14 +8,14 @@ const after = async (response, request, context) => {
   const { record, uploadImage } = context;
   try {
     if (record.isValid() && uploadImage) {
-      // const filePath = path.join('uploads', uploadImage.name);
+      const filePath = path.join('uploads', uploadImage.name);
       // await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
 
-      // await fs.promises.rename(uploadImage.path, filePath);
+      await fs.promises.rename(uploadImage.path, filePath);
 
 
-      // await record.update({ profilePhotoLocation: `/${filePath}` });
-      // await record.update({ formData: uploadImage.name });
+      await record.update({ profilePhotoLocation: `/${filePath}` });
+      await record.update({ formData: uploadImage.name });
     }
     return response;
   } catch (e) {
