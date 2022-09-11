@@ -8,12 +8,21 @@ const after = async (response, request, context) => {
   const { record, uploadImage } = context;
 
   if (record.isValid() && uploadImage) {
-    const filePath = path.join('./uploads', uploadImage.name); 
-    // await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
+    // uploads/imagename.png
+    const filePath = path.join('./uploads', uploadImage.name);
+    await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
 
-    // uploads the image locally
+    // uploads the image locally from the temp files to your server files
     await fs.promises.rename(uploadImage.path, filePath);
- 
+    console.log('------------------');
+    console.log(filePath);
+    console.log('------------------');
+    console.log(fs.promises.rename(uploadImage.path, '/', filePath));
+    console.log('------------------');
+    console.log(uploadImage.path);
+    console.log('------------------');
+
+
 
     await record.update({ profilePhotoLocation: `/${filePath}` });
     await record.update({ formData: uploadImage.name });
