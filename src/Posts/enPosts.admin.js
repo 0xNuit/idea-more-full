@@ -52,10 +52,6 @@ const options = {
     show: {
       isVisible: false,
     },
-    // branding: {
-    //  // logo: './uploads/Logo1.PNG',
-    //  companyName: 'Pass On',
-    // },
   },
 };
 

@@ -15,7 +15,7 @@ const after = async (response, request, context) => {
  
 
     await record.update({ profilePhotoLocation: `/${filePath}` });
-    await record.update({ formData: uploadImage.name });
+    // await record.update({ formData: uploadImage.name });
   }
   return response;
 };
