@@ -13,15 +13,11 @@ const after = async (response, request, context) => {
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
 
     // uploads the image locally from the temp files to your server files
-    await fs.promises.rename(uploadImage.path, filePath);
-    console.log('------------------');
-    console.log(filePath);
-    console.log('------------------');
-    console.log(fs.promises.rename(uploadImage.path, '/', filePath));
-    console.log('------------------');
-    console.log(uploadImage.path);
-    console.log('------------------');
-
+    await fs.promises.copyFile(uploadImage.path, filePath);
+    // await fs.promises.rename(uploadImage.path, filePath);
+    // console.log(filePath);
+    // console.log(fs.promises.rename(uploadImage.path, '/', filePath));
+    // console.log(uploadImage.path);
 
 
     await record.update({ profilePhotoLocation: `/${filePath}` });
