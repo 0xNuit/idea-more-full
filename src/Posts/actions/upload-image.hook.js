@@ -13,7 +13,7 @@ const after = async (response, request, context) => {
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
     // uploads the image locally from the temp files to your server files
     await fs.promises.copyFile(uploadImage.path, filePath);
-    // await fs.promises.rename(uploadImage.path, filePath);
+    await fs.promises.rename(uploadImage.path, filePath);
     // EXDEV: cross-device link not permitted, rename
 
 
