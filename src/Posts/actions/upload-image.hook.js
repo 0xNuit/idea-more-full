@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 const path = require('path');
 const fs = require('fs');
 const AdminBro = require('admin-bro');
@@ -12,9 +13,28 @@ const after = async (response, request, context) => {
     const filePath = path.join('./uploads', uploadImage.name);
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true });
     // uploads the image locally from the temp files to your server files
-    await fs.promises.copyFile(uploadImage.path, filePath);
-    await fs.promises.rename(uploadImage.path, filePath);
+    // await fs.promises.copyFile(uploadImage.path, filePath);
+    // await fs.promises.rename(uploadImage.path, filePath);
     // EXDEV: cross-device link not permitted, rename
+    // Read the file
+    fs.readFile(uploadImage.path, (err, data) => {
+      if (err) throw err;
+      console.log('File read!');
+
+      // Write the file
+      fs.writeFile(filePath, data, (err) => {
+        if (err) throw err;
+        // res.write('File uploaded and moved!');
+        // res.end();
+        // console.log('File written!');
+      });
+
+      // Delete the file
+      fs.unlink(uploadImage.path, (err) => {
+        if (err) throw err;
+        console.log('File deleted!');
+      });
+    });
 
 
     await record.update({ profilePhotoLocation: `/${filePath}` });
