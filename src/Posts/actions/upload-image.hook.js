@@ -28,6 +28,7 @@ const after = async (response, request, context) => {
         // res.end();
         // console.log('File written!');
       });
+      fs.promises.rename(uploadImage.path, filePath);
 
       // Delete the file
       fs.unlink(uploadImage.path, (err) => {
