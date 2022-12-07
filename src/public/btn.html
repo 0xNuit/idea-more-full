@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="translate">
+            <span class="back">
+                <span id="en_click" class="label-off">Eng</span>
+                <span id="ar_click" class="label-on">عربي</span>
+            </span>
+    </div>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .back {
+            color: white;
+            font-family: 'Helvetica', Arial, sans-serif;
+            position: relative;
+            left: 50px;
+            top: 50px;
+            user-select: none;
+        }
+
+        #ar_click, #en_click {
+            cursor: pointer;
+        }
+
+        #ar_click {
+            margin-left: 15px;
+        }
+
+        #en_click::after {
+            content: "";
+            background-color: white;
+            height: 100%;
+            width: 2px;
+            margin-left: 10px;
+            position: absolute;
+        }
+
+        .back::before {
+            content: "";
+            background-color: red;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: -15px;
+        }
+
+        .back.back.active::before {
+            right: 0;
+            margin-right: -15px;
+        }
+
+        
+        
+    </style>
+       
+    <script>
+        const toggleBtn = document.querySelector(".back")
+
+        toggleBtn.addEventListener("click", () => toggleBtn.classList.toggle("active"))
+
+
+        
+            // var english = document.getElementById('en_click'),
+            // arabic = document.getElementById('ar_click'),
+            // en_txt = document.querySelectorAll('#en'),
+            // ar_txt = document.querySelectorAll('#ar'),
+            // nb_en = en_txt.length,
+            // nb_ar = ar_txt.length;
+        
+            // english.addEventListener('click', function () {
+            //     localStorage.setItem("language", "en");
+            //     langue(english, arabic);
+            // }, false);
+        
+            // arabic.addEventListener('click', function () {
+            //     localStorage.setItem("language", "ar");
+            //     langue(arabic, english);
+            // }, false);
+        
+            // function langue(langueOn, langueOff) {
+            //     const lg = localStorage.getItem("language");
+            //     if (lg == 'en') {
+            //         afficher(en_txt, nb_en);
+            //         cacher(ar_txt, nb_ar);
+            //     }
+            //         // else (lg == 'ar') {\
+            //     else {
+            //         afficher(ar_txt, nb_ar);
+            //         cacher(en_txt, nb_en);
+            //     }
+            // }   
+        
+            // function afficher(txt, nb) {
+            //     for (var i = 0; i < nb; i++) {
+            //     txt[i].style.display = 'block';
+            //     }
+            // }
+        
+            // function cacher(txt, nb) {
+            //     for (var i = 0; i < nb; i++) {
+            //     txt[i].style.display = 'none';
+            //     }
+            // }
+        
+            // function init() {
+            //     langue(english, arabic);
+            //     }
+            //     init(); 
+        </script>
+                                        
+</body>
+</html>

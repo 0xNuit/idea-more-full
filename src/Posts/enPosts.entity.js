@@ -10,6 +10,7 @@ const enpostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  section: [{ type: String, enum: ['A', 'B', 'C'] }],
   description: {
     type: String,
   },

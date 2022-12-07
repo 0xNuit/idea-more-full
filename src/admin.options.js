@@ -9,12 +9,11 @@ const enCompanyPosts = require('./Posts/enPosts.admin');
 
 /** @type {import('admin-bro').AdminBroOptions} */
 const options = {
-  resources: [CompanyPosts,enCompanyPosts],
+  resources: [CompanyPosts, enCompanyPosts],
   branding: {
-   logo: '/uploads/favicon.png',
-   companyName: 'IDEA',
+    logo: '/uploads/favicon.png',
+    companyName: 'IDEA',
   },
 };
 
 module.exports = options;
- 

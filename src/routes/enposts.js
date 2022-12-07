@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
   // destination for files
   // eslint-disable-next-line no-shadow
   destination(request, file, callback) {
-    callback(null, './uploads'); // '../vuetify-pass/src/images'
+    callback(null, './uploads'); // '../s/src/images'
   },
 
   // add back the extension
