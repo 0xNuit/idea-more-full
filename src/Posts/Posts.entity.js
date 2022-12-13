@@ -10,7 +10,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  section: [{ type: String, enum: ['أ', 'ب', 'س'] }],
+  section: [{ type: String, enum: ['وسائل وهدايا دعائية', 'مجسمات واعمدة اعلانية', 'لوحات اعلانية', 'لوحات ارشادية', 'طباعة(دجيتال-اوفست)', 'تصميم جرافك', 'اعمال كلادينج', 'اكشاك القهوة', 'اعمال استيكرات'] }],
   description: {
     type: String,
   },

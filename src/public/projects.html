@@ -443,14 +443,14 @@
                                     const initialSelected = document.querySelector('.selected');
                                     let selectedCategory = initialSelected.innerText.toLowerCase(); // 'landscape'
                                     async function postsFunction() {
-                                        const response = await fetch('164.92.252.37/api/posts', {}); 
+                                        const response = await fetch('http://localhost/api/posts', {}); 
                                         const json = await response.json();
                                         return json; 
                                     }	
                                     // Menu & Filter
                                     //fetch('http://localhost:5400/api/posts')
                                     async function firstpostsFunction() {
-                                        const response = await fetch('http://164.92.252.37/api/posts', {}); 
+                                        const response = await fetch('http://localhost/api/posts', {}); 
                                         const json = await response.json();
                                         console.log('json')
                                         console.log(json)
@@ -466,7 +466,7 @@
                                                         <div class="projects-box">
                                                             <div class="projects-thumbnail">
                                                                 <a href="nproject-1.html">
-                                                                    <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                    <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                 </a>
                                                                 <div class="overlay">
                                                                     <h5>LADUN_INVESTMENT_COMPANY</h5>   
@@ -504,7 +504,7 @@
                                                                 <div class="projects-box">
                                                                     <div class="projects-thumbnail">
                                                                         <a href="nproject-1.html">
-                                                                            <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                            <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                         </a>
                                                                         <div class="overlay">
                                                                             <h5>LADUN_INVESTMENT_COMPANY</h5>
@@ -527,7 +527,7 @@
                                                                 <div class="projects-box">
                                                                     <div class="projects-thumbnail">
                                                                         <a href="nproject-1.html">
-                                                                            <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                            <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                         </a>
                                                                         <div class="overlay">
                                                                             <h5>LADUN_INVESTMENT_COMPANY</h5>
@@ -666,12 +666,12 @@
                                     const eninitialSelected = document.querySelector('.selected');
                                     let enselectedCategory = eninitialSelected.innerText.toLowerCase(); // 'landscape'
                                     async function enpostsFunction() {
-                                        const response = await fetch('http://164.92.252.37/api/enposts', {}); 
+                                        const response = await fetch('http://localhost/api/enposts', {}); 
                                         const json = await response.json();
                                         return json; 
                                     }	
                                     async function firstenpostsFunction() {
-                                        const response = await fetch('http://164.92.252.37/api/enposts', {}); 
+                                        const response = await fetch('http://localhost/api/enposts', {}); 
                                         const json = await response.json();
                                         console.log('json')
                                         console.log(json)
@@ -687,7 +687,7 @@
                                                         <div class="projects-box">
                                                             <div class="projects-thumbnail">
                                                                 <a href="nproject-1.html">
-                                                                    <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                    <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                 </a>
                                                                 <div class="overlay">
                                                                     <h5>LADUN_INVESTMENT_COMPANY</h5>   
@@ -724,7 +724,7 @@
                                                                 <div class="projects-box">
                                                                     <div class="projects-thumbnail">
                                                                         <a href="nproject-1.html">
-                                                                            <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                            <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                         </a>
                                                                         <div class="overlay">
                                                                             <h5>LADUN_INVESTMENT_COMPANY</h5>
@@ -747,7 +747,7 @@
                                                                 <div class="projects-box">
                                                                     <div class="projects-thumbnail">
                                                                         <a href="nproject-1.html">
-                                                                            <img src="http://164.92.252.37/uploads/${data[i].formData}" alt="">
+                                                                            <img src="http://localhost/uploads/${data[i].formData}" alt="">
                                                                         </a>
                                                                         <div class="overlay">
                                                                             <h5>LADUN_INVESTMENT_COMPANY</h5>

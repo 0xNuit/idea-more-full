@@ -54,6 +54,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/public/'));
   //Handle SPA
   app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index-ar.html'));
+  app.use('/c/', express.static(__dirname + '/public/c/'));
+  app.get('/c/*', (req, res) => res.sendFile(__dirname + '/public/c/index.html'));
   const run = async () => {
 
     const port = 80;
